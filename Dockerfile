@@ -11,11 +11,12 @@ RUN apt update \
 WORKDIR /tmp
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC \
- && apt update && apt upgrade -y \
+ && apt-key adv --keyserver keyserver.ubuntu.com --recv AB7DD0158393F0D4
+
+RUN apt update && apt upgrade -y \
  && apt install -y libpci3 libpci-dev libx11-dev libxext-dev libxxf86vm-dev libnuma-dev systemd libnvidia-ml-dev
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv AB7DD0158393F0D4 \
- && echo 'deb [arch=amd64] https://download.cudo.org/repo/apt/ experimental main' >> /etc/apt/sources.list \
+RUN echo 'deb [arch=amd64] https://download.cudo.org/repo/apt/ experimental main' >> /etc/apt/sources.list \
  && apt update \
  && apt install cudo-miner-cli cudo-miner-core cudo-miner-headless cudo-miner-service
 
