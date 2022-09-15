@@ -6,12 +6,12 @@ ENV TERM linux
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv A4B469963BF863CC \
+ && apt-key adv --keyserver keyserver.ubuntu.com --recv AB7DD0158393F0D4
+
 RUN apt update \
     && apt install -y wget dnsutils
 WORKDIR /tmp
-
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv A4B469963BF863CC \
- && apt-key adv --keyserver keyserver.ubuntu.com --recv AB7DD0158393F0D4
 
 RUN apt update && apt upgrade -y \
  && apt install -y libpci3 libpci-dev libx11-dev libxext-dev libxxf86vm-dev libnuma-dev systemd libnvidia-ml-dev
