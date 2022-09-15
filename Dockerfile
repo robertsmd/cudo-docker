@@ -10,7 +10,7 @@ RUN apt update \
     && apt install -y wget dnsutils
 WORKDIR /tmp
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC \
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv A4B469963BF863CC \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv AB7DD0158393F0D4
 
 RUN apt update && apt upgrade -y \
