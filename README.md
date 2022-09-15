@@ -36,3 +36,20 @@ Set `<LABEL>` to distinguish your workers from one another.
 ```bash
 docker exec -it cudo cudominercli login <ORGANIZATION_NAME>
 ```
+
+3. info
+
+```bash
+docker exec -it cudo cudominercli hardware
+docker exec -it cudo cudominercli ps
+```
+
+## Troubleshooting
+
+```bash
+sudo apt install cuda
+sudo apt install -y nvidia-docker2
+lsmod | grep nvidia
+nvtop
+nvidia-smi
+```
