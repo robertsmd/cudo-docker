@@ -20,7 +20,7 @@ docker run --gpus all -d --rm -h <LABEL> --name cudo cudominer
 
 to find your GPUs:
 ```
-docker run --gpus all -d --rm cudominer nvidia-smi
+docker run --gpus all --rm cudominer nvidia-smi
 ```
 
 to start with just the 1st (0th) GPU
