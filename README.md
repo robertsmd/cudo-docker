@@ -16,6 +16,19 @@ docker build -t cudominer .
 docker run --gpus all -d --rm -h <LABEL> --name cudo cudominer
 ```
 
+### for only some GPUs 
+
+to find your GPUs:
+```
+docker run --gpus all -d --rm cudominer nvidia-smi
+```
+
+### to start with just the 1st (0th) GPU
+
+```
+docker run --gpus '"device=0"' -d --rm --name cudo cudominer
+```
+
 Set `<LABEL>` to distinguish your workers from one another.
 
 2. Set organization
